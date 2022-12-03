@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="icon" href="icon.png">
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="footer.css">
+        
+    </head>
+    <body>
+
+    <header>
+
+<div id="mynav">
+<nav>
+    <ul>
+        <li><a href="main.html" tabindex="1">Басты</a></li>
+        <li><a href="regis.html" tabindex="2">Тіркелу</a></li>
+        <li><a href="login.html" tabindex="3">Кіру</a></li>
+    </ul>
+</nav>
+</div>
+
+</header>
+
+<br>
+    <br>
+    <br>
+<main>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+<center> 
+
+    <div id="main">
+        <h1>Кіру</h1> 
+    
+    <form action="" id="registrationform" method="post"> 
+        <table> 
+            <tbody><tr><td></td><td><label id="email_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Email теріңіз: </td><td><input type="text" name="email" required/></td> 
+            </tr> 
+
+            <tr><td></td><td><label id="password_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Құпия сөз: </td><td><input type="password" name="password" required/></td> 
+            </tr> 
+
+
+            </tbody> 
+        </table> 
+        <br> 
+        <input type="button" value="Кіру" onclick="RegistrationForm()" id="button"> 
+       
+    </form>
+
+</center> 
+<br>
+    <br>
+</main>
+<script>
+    function RegistrationForm() { 
+        var result = true; 
+        var a = document.forms.registrationform.email.value; 
+        sessionStorage.setItem("Email", a)
+        localStorage.setItem("Email", a)
+        var c = document.forms.registrationform.password.value; 
+        sessionStorage.setItem("Password", c)
+        localStorage.setItem("Password", c)
+        var email_v = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+        var password_v = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/; 
+    
+        document.getElementById("email_message").innerHTML = ""; 
+       
+        document.getElementById("password_message").innerHTML = ""; 
+
+    
+        if (a == null || a == "" || email_v.test(a) == false) { 
+            document.getElementById("email_message").innerHTML = "Email дұрыс емес форматта немесе тіркелмеген"; 
+            result = false; 
+} 
+    
+  
+ 
+        if (c==null || c == "" || password_v.test(c) == false) { 
+            document.getElementById("password_message").innerHTML= "Пароль дұрыс емес"; 
+            result == false;} 
+    
+       
+} 
+    function ResetForm() { 
+}
+</script>
+
+
+
+<footer>
+    <center>
+        <a class="inst" href="https://www.instagram.com/kitap_kz/"><img src="inst.png"></a>
+   
+         
+    <p class="copyrightText">© kitap.kz, 2022. Муратбекова Айдана</p>
+</center>
+ 
+</footer>
+
+</body>
+</html>

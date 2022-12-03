@@ -1,0 +1,46 @@
+.error_message
+{ 
+    box-shadow: 0 0 5px 1px rgb(253, 239, 213); 
+ }
+main{
+    background-image: url("back.png");
+}       
+#main{
+    background-color: rgb(253, 172, 78);
+    width: 650px;
+    margin: auto;
+    height: 300px;
+    padding: 10px;
+    border-radius: 15px;
+}
+form{
+    border: 2px solid white ;
+    width: 550px;
+    padding: 10px;
+    color: white;
+
+}
+input{
+    height: 25px;
+    border-radius: 10px;
+    width: 250px;
+    border: 2px solid black;
+    padding: 5px;
+}
+input[type="button"],[type="reset"]{
+    width: 200px;
+    padding: 3px;
+    cursor: pointer;
+}
+input[type="radio"]{
+    width: 50px;
+    padding: 3px;
+    cursor: pointer;
+}
+input[type="button"]:hover,[type="reset"]:hover{
+    background-color: rgb(250, 201, 78);
+    color: white;
+}
+h1{
+    color: white;
+}

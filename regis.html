@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="icon" href="icon.png">
+        <link rel="stylesheet" href="regis.css">
+        <link rel="stylesheet" href="nav.css">
+        
+
+    </head>
+    <body>
+
+    <header>
+<nav>
+    <ul>
+        <li><a href="main.html" tabindex="1">Басты</a></li>
+        <li><a href="regis.html" tabindex="2">Тіркелу</a></li>
+        <li><a href="login.html" tabindex="3">Кіру</a></li>
+    </ul>
+</nav>
+</header>
+
+<br>
+    <br>
+    <br>
+<main>
+    
+    <br>
+    
+<center> 
+
+    <div id="main">
+        <h1>Тіркелу</h1> 
+    
+    <form action="" id="registrationform" method="post"> 
+        <table> 
+            <tbody><tr><td></td><td><label id="email_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Email теріңіз: </td><td><input type="text" name="email" required/></td> 
+            </tr> 
+
+            <tr><td></td><td><label id="username_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Толық атыңыз: </td><td><input type="text" name="username" required/></td> 
+            </tr> 
+
+            <tr><td></td><td><label id="phone_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Ұялы телефон: </td><td><input type="text" name="phone" placeholder="8 7777 777 77 77"  required/></td> 
+            </tr> 
+
+            <tr><td></td><td><input type="radio" id="Male" name="gender" value="Male">
+            <label for="Male">Ер</label>
+            <input type="radio" id="Female" name="gender"  value="Female">
+            <label for="Female">Әйел</label></td></tr>
+
+            <tr><td></td><td><label id="password_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Құпия сөз: </td><td><input type="password" name="password" required/></td> 
+            </tr> 
+
+            <tr><td></td><td><label id="repassword_message" class="error_message"></label></td></tr> 
+            <tr> 
+                <td>Құпия сөзді қайталаңыз: </td><td><input type="password" name="repassword" required/></td> 
+            </tr> 
+
+
+            </tbody> 
+        </table> 
+        <br> 
+        <input type="button" value="Тіркелу" onclick="RegistrationForm()" id="button"> 
+        <input type="reset" value="Жаңадан" onclick="ResetForm()" id="button"> 
+    </form>
+
+</center> 
+<br>
+    <br>
+</main>
+<script>
+    function RegistrationForm() { 
+        var result = true; 
+        var a = document.forms.registrationform.email.value; 
+    sessionStorage.setItem("Email", a)
+    localStorage.setItem("Email", a)
+    var b = document.forms.registrationform.username.value;
+    sessionStorage.setItem("Username", b)
+    localStorage.setItem("Username", b) 
+    var c = document.forms.registrationform.password.value; 
+    sessionStorage.setItem("Password", c)
+    localStorage.setItem("Password", c)
+    var d = document.forms.registrationform.repassword.value; 
+    
+    var e = document.forms.registrationform.phone.value; 
+    sessionStorage.setItem("Phone", e)
+    localStorage.setItem("Phone", e)
+    var f = document.forms.registrationform.gender.value; 
+    sessionStorage.setItem("Gender", f)
+    localStorage.setItem("Gender", f)
+        var email_v = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+        var username_v = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/; 
+        var password_v = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/; 
+        var phone_v = /^[\+]?[7,8]{1}[-\s\.]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im; 
+    
+        document.getElementById("email_message").innerHTML = ""; 
+        document.getElementById("username_message").innerHTML = ""; 
+        document.getElementById("password_message").innerHTML = ""; 
+        document.getElementById("repassword_message").innerHTML = "";  
+        document.getElementById("phone_message").innerHTML = "";  
+    
+        if (a == null || a == "" || email_v.test(a) == false) { 
+            document.getElementById("email_message").innerHTML = "Email дұрыс емес форматта"; 
+            result = false; 
+} 
+    
+        if (b==null || b == "" || username_v.test(b) == false) { 
+            document.getElementById("username_message").innerHTML= "Атыңызды толық жазыңыз"; 
+            result == false;  } 
+ 
+        if (c==null || c == "" || password_v.test(c) == false) { 
+            document.getElementById("password_message").innerHTML= "Сегізден көп символы бар құпия сөз ойлап табыңыз"; 
+            result == false;} 
+    
+        if (d==null || d == "" || c!==d) { 
+            document.getElementById("repassword_message").innerHTML= "Құпия сөзбен бірдей емес"; 
+            result == false; 
+} 
+    
+        if (e==null || e == "" || phone_v.test(e) == false) { 
+            document.getElementById("phone_message").innerHTML= " 8 немесе +7 басталу керек"; 
+            result == false; 
+} 
+    
+       
+} 
+    function ResetForm() { 
+}
+</script>
+<footer>
+    <center>
+        <a class="inst" href="https://www.instagram.com/kitap_kz/"><img src="inst.png"></a>
+   
+         
+    <p class="copyrightText">© kitap.kz, 2022. Муратбекова Айдана</p>
+</center>
+  
+</footer>
+
+</body>
+</html>
